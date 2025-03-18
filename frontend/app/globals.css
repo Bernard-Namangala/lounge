@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-geist-sans: "Geist Sans", system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-dark text-light;
+    font-family: var(--font-geist-sans);
+  }
+}
+
+/* Fix iOS input shadows */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+textarea {
+  @apply appearance-none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Fix 100vh on mobile */
+.h-screen {
+  height: 100vh; /* Fallback */
+  height: -webkit-fill-available;
+  height: stretch;
+}
+
+/* Prevent pull-to-refresh behavior */
+body {
+  overscroll-behavior-y: contain;
+}
